@@ -16,7 +16,7 @@ object Task {
     DB.withConnection { implicit c =>
       SQL("insert into task (label) values ({label})").on(
         'label -> label
-      ).executeUpdate()
+      ).executeInsert()
     }
   }
 
